@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Nav, Platform } from 'ionic-angular';
-@IonicPage({
-  name:"loginPage"
-})
+import { NavController, NavParams } from 'ionic-angular';
+import { WelcomePage } from '../welcome/welcome';
+
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html'
@@ -12,6 +10,7 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   public goToWelcome() {
-    this.navCtrl.push(welcomePage);
+    
+    this.navCtrl.push(WelcomePage);
   }
 }
