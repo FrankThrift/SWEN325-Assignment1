@@ -1,10 +1,11 @@
 <ion-content padding class = league>
 
   <h3>Welcome to the League of Legends Pocket Assistant!</h3>
-  <p> Please log in! </p>
-
-  <p color = "lolgrey">
-    <button ion-button color="primary" menuToggle>Toggle Menu</button>
+  <h1> Please log in! </h1>
+  <ion-input placeholder="Summoner name here" align = "center"></ion-input>
+  <p>
+    <button ion-button color="primary" (click)="goToWelcome()">Log In</button>
+    <button ion-button color="primary" menuToggle>menu</button>
   </p>
 
 </ion-content>
