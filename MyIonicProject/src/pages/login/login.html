@@ -2,10 +2,11 @@
 
   <h3>Welcome to the League of Legends Pocket Assistant!</h3>
   <h1> Please log in! </h1>
-  <ion-input placeholder="Summoner name here" align = "center"></ion-input>
+
   <p>
+    <ion-input type = "text" placeholder="Summoner name here" name ="summonerName" align = "center" [(ngModel)] = "username"></ion-input>
     <button ion-button color="primary" (click)="goToWelcome()">Log In</button>
-    <button ion-button color="primary" menuToggle>menu</button>
+
   </p>
 
 </ion-content>

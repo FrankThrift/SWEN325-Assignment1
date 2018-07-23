@@ -7,10 +7,13 @@ import { WelcomePage } from '../welcome/welcome';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  username = '';
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   public goToWelcome() {
-    
-    this.navCtrl.push(WelcomePage);
+    this.navCtrl.setRoot(WelcomePage,{
+      currentUser: this.username
+    });
+    this.navCtrl.popToRoot();
   }
 }
