@@ -10,6 +10,6 @@ export class WelcomePage {
     this.summoner = navParams.get('currentUser');
   }
   setSummoner(name){
-    summoner = name;
+    this.summoner = name;
   }
 }
