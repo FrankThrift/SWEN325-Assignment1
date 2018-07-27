@@ -10,20 +10,16 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 import { ChampionPage } from '../pages/champions/champions';
 
-import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { GlobalsProvider } from '../providers/globals/globals';
 
 @NgModule({
   declarations: [
     MyApp,
     WelcomePage,
     LoginPage,
-    ItemDetailsPage,
-    ListPage,
-    ChampionPage
+    ChampionPage,
   ],
   imports: [
     BrowserModule,
@@ -35,14 +31,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     WelcomePage,
     LoginPage,
-    ItemDetailsPage,
-    ListPage,
-    ChampionPage
+    ChampionPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    GlobalsProvider
   ]
 })
 export class AppModule {}

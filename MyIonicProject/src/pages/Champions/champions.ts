@@ -3,6 +3,9 @@ import { NavController, NavParams } from 'ionic-angular';
 
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
+
+import { GlobalsProvider } from '../../providers/globals/globals'
+
 @Component({
   selector: 'page-champions',
   templateUrl: 'champions.html'
@@ -10,9 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 export class ChampionPage {
   apiKey = "?api_key=RGAPI-e3097b6e-0843-4b92-8992-256564de1371"
   data;
-  summoner = '';
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
-
+  summoner = 'DEFAULT_SUMMONER_NAME';
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient, private globals: GlobalsProvider) {
+    this.summoner = globals.summoner;
   }
 
   getFreeChamions(){

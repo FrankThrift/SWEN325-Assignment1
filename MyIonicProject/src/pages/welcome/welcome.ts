@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { GlobalsProvider } from '../../providers/globals/globals'
 @Component({
   selector: 'page-welcome',
   templateUrl: 'welcome.html'
 })
 export class WelcomePage {
-  summoner = '1';
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.summoner = navParams.get('currentUser');
+  summoner = '';
+  constructor(public navCtrl: NavController, public navParams: NavParams,
+    private globals: GlobalsProvider) {
+    this.summoner = globals.summoner;
   }
-  setSummoner(name){
-    this.summoner = name;
-  }
-  static getSummoner(){
-    return this.summoner;
-  }
+
+
 }
