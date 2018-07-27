@@ -12,4 +12,7 @@ export class WelcomePage {
   setSummoner(name){
     this.summoner = name;
   }
+  static getSummoner(){
+    return this.summoner;
+  }
 }

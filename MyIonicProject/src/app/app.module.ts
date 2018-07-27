@@ -3,8 +3,12 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { HttpClient } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
+import { ChampionPage } from '../pages/champions/champions';
 
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
@@ -18,11 +22,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePage,
     LoginPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    ChampionPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -30,7 +36,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     WelcomePage,
     LoginPage,
     ItemDetailsPage,
-    ListPage
+    ListPage,
+    ChampionPage
   ],
   providers: [
     StatusBar,

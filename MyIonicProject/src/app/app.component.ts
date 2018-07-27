@@ -7,6 +7,7 @@ import { Platform, MenuController, Nav } from 'ionic-angular';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 import { ListPage } from '../pages/list/list';
+import { ChampionPage } from '../pages/champions/champions';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -34,7 +35,8 @@ export class MyApp {
     this.pages = [
       { title: 'LoginPage', component: LoginPage },
       { title: 'My First List', component: ListPage },
-      { title: 'WelcomePage', component: WelcomePage}
+      { title: 'WelcomePage', component: WelcomePage},
+      { title: 'ChampionPage', component: ChampionPage}
     ];
   }
 
