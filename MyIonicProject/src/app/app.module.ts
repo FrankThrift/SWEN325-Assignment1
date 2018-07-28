@@ -13,6 +13,7 @@ import { ChampionPage } from '../pages/champions/champions';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { GlobalsProvider } from '../providers/globals/globals';
+import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { GlobalsProvider } from '../providers/globals/globals';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    GlobalsProvider
+    GlobalsProvider,
+    RestProvider
   ]
 })
 export class AppModule {}
