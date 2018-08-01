@@ -12,7 +12,8 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'champions.html'
 })
 export class ChampionPage {
-  champions: any;
+  responseObject: any;
+  champs = [];
   summoner = 'DEFAULT_SUMMONER_NAME';
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient,
      private globals: GlobalsProvider, private restProvider: RestProvider) {
@@ -23,9 +24,18 @@ export class ChampionPage {
   displayChampions(){
     this.restProvider.getChampions()
     .then(data => {
-      this.champions = data;
-      console.log(this.champions);
+      this.responseObject = data;
+      console.log(this.responseObject);
+      console.log(this.responseObject.data.Aatrox.id);
+      for(var champion in this.responseObject.data){
+        if (!this.responseObject.data.hasOwnProperty(champion)) continue;
+        //var obj = this.responseObject.data[champion];
+        this.champs.push(this.responseObject.data[champion].id)
+
+      }
+      console.log(this.champs);
     });
+
   }
 
 }
