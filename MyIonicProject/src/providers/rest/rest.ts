@@ -9,18 +9,19 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class RestProvider {
-apiKey = "?api_key=RGAPI-e3097b6e-0843-4b92-8992-256564de1371";
+apiKey = "&api_key=RGAPI-f6f060b1-9309-4c91-9980-e9820c2531e6";
+url = 'https://oc1.api.riotgames.com/lol/platform/v3/champions?freeToPlay=false'
   constructor(public http: HttpClient) {
-  console.log('Hello RestServiceProvider Provider');
   }
   getChampions() {
-  //return new Promise(resolve => {
-    //this.http.get(this.apiUrl+'/users').subscribe(data => {
-    //  resolve(data);
-    //}, err => {
-    //  console.log(err);
-    //});
-//  });
+  return new Promise(resolve => {
+    console.log(this.url+this.apiKey)
+    this.http.get(this.url+this.apiKey).subscribe(data => {
+      resolve(data);
+    }, err => {
+      console.log(err);
+    });
+  });
 }
 
 }
