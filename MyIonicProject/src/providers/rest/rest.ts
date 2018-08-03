@@ -9,10 +9,13 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class RestProvider {
-apiKey = "&api_key=RGAPI-bf871664-b1ca-484c-b414-08d00097c3de";
-championURL = 'http://ddragon.leagueoflegends.com/cdn/8.14.1/data/en_US/champion.json'
+apiKey = "&api_key=RGAPI-0a9aa70e-5cbd-403b-abc4-156b21994d0f";
+squareURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/";
+championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion.json";
   constructor(public http: HttpClient) {
   }
+
+
   getChampions() {
   return new Promise(resolve => {
     this.http.get(this.championURL).subscribe(data => {
@@ -22,5 +25,17 @@ championURL = 'http://ddragon.leagueoflegends.com/cdn/8.14.1/data/en_US/champion
     });
   });
 }
+
+getSquare(name){
+  return new Promise(resolve => {
+    this.http.get(this.squareURL + name + '.png').subscribe(data=>{
+      resolve(data);
+    }, err =>{
+      console.log(err);
+    });
+  });
+}
+
+
 
 }

@@ -34,7 +34,8 @@ export class MyApp {
     // set our app's pages
     this.pages = [
       { title: 'WelcomePage', component: WelcomePage},
-      { title: 'ChampionPage', component: ChampionPage}
+      { title: 'ChampionPage', component: ChampionPage},
+      { title: 'Logout', component: LoginPage}
     ];
   }
 

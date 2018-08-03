@@ -2,15 +2,16 @@
 
   <h3>Welcome to the champions page {{summoner}} !</h3>
   <ion-list>
-  <ion-item>
-    <ion-thumbnail item-start>
-      <img src="https://ddragon.leagueoflegends.com/cdn/7.10.1/img/champion/Annie.png">
-    </ion-thumbnail>
-    <h2>Annie</h2>
-    <p>Scary Girl</p>
-    <button ion-button clear item-end>View</button>
-  </ion-item>
-</ion-list>
+    <button ion-item *ngFor="let champion of champs">
+      <ion-icon name="{{champion.name}}" item-left>
+        <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/{{champion.name}}.png" item-left>
+      </ion-icon>
+      <div class="item-details" item-right>
+        {{champion.name}}, {{champion.note}}
+      </div>
+
+    </button>
+  </ion-list>
 
 
 
