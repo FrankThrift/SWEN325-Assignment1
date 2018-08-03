@@ -44,7 +44,7 @@ export class LoginPage {
         }
       },
       {
-        text: 'Login',
+        text: 'Ok',
         handler: data => {
           this.username = data.summonerName;
           //console.log(data);

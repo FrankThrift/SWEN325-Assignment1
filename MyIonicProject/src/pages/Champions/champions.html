@@ -1,6 +1,14 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Welcome to the champions page {{summoner}} !</ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-searchbar placeholder="Filter Champ with Cancel" showCancelButton color="danger" (ionInput)="filterChampions($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content padding class = league>
 
-  <h3>Welcome to the champions page {{summoner}} !</h3>
   <ion-list>
     <button ion-item *ngFor="let champion of champs">
       <ion-icon name="{{champion.name}}" item-left>
