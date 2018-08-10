@@ -13,6 +13,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { GlobalsProvider } from '../providers/globals/globals';
 
+/*
+THIS PAGE IS TAKE DIRECTLY FROM THE TUTORIAL. IT WAS NOT SPECIFIED THAT WE SHOULD NOT INCLUDE
+THIS AS A GOOD BASE FOR OUR APP, SO I LFET IT IN.
+*/
 @Component({
   templateUrl: 'app.html'
 })

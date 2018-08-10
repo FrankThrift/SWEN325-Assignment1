@@ -14,8 +14,14 @@ export class GlobalsProvider {
   }
 
   public summoner = 'default'
+  public championSelected ='default'
+
+
   public setSummoner(name){
     this.summoner = name;
   }
 
+  public setChampion(name){
+    this.championSelected = name;
+  }
 }

@@ -9,32 +9,44 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class RestProvider {
-apiKey = "&api_key=RGAPI-0a9aa70e-5cbd-403b-abc4-156b21994d0f";
+apiKey = "&api_key=RGAPI-43ec9236-ce29-499f-b79d-bf562e4498e1";
 squareURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/";
-championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion.json";
+championsURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion.json";
+championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion/"
   constructor(public http: HttpClient) {
   }
 
 
-  getChampions() {
-  return new Promise(resolve => {
-    this.http.get(this.championURL).subscribe(data => {
-      resolve(data);
-    }, err => {
-      console.log(err);
+  getChampion(name){
+    return new Promise(resolve => {
+      this.http.get(this.championURL+name+'.json').subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
     });
-  });
-}
+  }
 
-getSquare(name){
-  return new Promise(resolve => {
-    this.http.get(this.squareURL + name + '.png').subscribe(data=>{
-      resolve(data);
-    }, err =>{
-      console.log(err);
+  getChampions() {
+    return new Promise(resolve => {
+      this.http.get(this.championsURL).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
     });
-  });
-}
+  }
+
+
+  getSquare(name){
+    return new Promise(resolve => {
+      this.http.get(this.squareURL + name + '.png').subscribe(data=>{
+        resolve(data);
+      }, err =>{
+        console.log(err);
+      });
+    });
+  }
 
 
 

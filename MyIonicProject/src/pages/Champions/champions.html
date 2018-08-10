@@ -10,7 +10,7 @@
 <ion-content padding class = league>
 
   <ion-list>
-    <button ion-item *ngFor="let champion of champs">
+    <button ion-item *ngFor="let champion of champs" (click)="goToChamps(champion.name)">
       <ion-icon name="{{champion.name}}" item-left>
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/{{champion.name}}.png" item-left>
       </ion-icon>

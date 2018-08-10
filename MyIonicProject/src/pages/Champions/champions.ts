@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
 import { HttpClient } from '@angular/common/http';
-
+import { ChampPage } from '../champ/champ';
 import { GlobalsProvider } from '../../providers/globals/globals';
 import { RestProvider } from '../../providers/rest/rest';
 
@@ -21,11 +20,12 @@ export class ChampionPage {
     this.getChampionInformation();
   }
 
+  //Go through the champion information, add objects to the array that include
+  //their names.
   getChampionInformation(){
     this.restProvider.getChampions()
     .then(data => {
       this.responseObject = data;
-      this.jsonOfChamps = data;
       //console.log(this.responseObject);
       for(var champion in this.responseObject.data){
         if (!this.responseObject.data.hasOwnProperty(champion)) continue;
@@ -43,6 +43,8 @@ export class ChampionPage {
     this.champs = this.champsDefault;
   }
 
+  //Filtering the List of champions for the page,
+  //when an event occurs(the searchbar gets updated)
   filterChampions(ev: any) {
     this.resetChampions();
     let val = ev.target.value;
@@ -53,6 +55,13 @@ export class ChampionPage {
     }
   }
 
+
+
+  goToChamps(name){
+    this.globals.setChampion(name);
+    this.navCtrl.push(ChampPage);
+
+  }
 
 
 }
