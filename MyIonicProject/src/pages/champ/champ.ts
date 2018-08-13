@@ -18,6 +18,7 @@ import { GlobalsProvider } from '../../providers/globals/globals';
 })
 export class ChampPage {
   skins = new Array();//currently used champions in the list
+  abilities = new Object();
   responseObject: any;
   championName = 'deafult';
 
@@ -42,9 +43,22 @@ export class ChampPage {
           });
         }
 
-      }
-      console.log(this.skins);
+          //passive: this.responseObject.data[champion].passive.image.full,
+          this.abilities.q = this.responseObject.data[champion].spells[0].image.full,
+          this.abilities.qDes = this.responseObject.data[champion].spells[0].description,
+          this.abilities.w = this.responseObject.data[champion].spells[1].image.full,
+          this.abilities.wDes = this.responseObject.data[champion].spells[1].description,
+          this.abilities.e = this.responseObject.data[champion].spells[2].image.full,
+          this.abilities.eDes = this.responseObject.data[champion].spells[2].description,
+          this.abilities.r = this.responseObject.data[champion].spells[3].image.full,
+          this.abilities.rDes = this.responseObject.data[champion].spells[3].description
 
+
+
+      }
+      //console.log(this.skins);
+      console.log(this.abilities);
+      console.log(this.abilities.q);
     });
   }
 

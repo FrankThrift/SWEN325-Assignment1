@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class RestProvider {
-apiKey = "&api_key=RGAPI-43ec9236-ce29-499f-b79d-bf562e4498e1";
+apiKey = "&api_key=RGAPI-f8ae134b-2500-4b23-989f-7c0f5325050c";
 squareURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/";
 championsURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion.json";
 championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion/"

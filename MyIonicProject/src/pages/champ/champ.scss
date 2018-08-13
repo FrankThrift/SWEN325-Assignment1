@@ -1,6 +1,9 @@
 img{
 
 }
+button{
+  display:inline-block;
+}
 .scroll-content{
   background: #171717;
   color:#888;
@@ -10,4 +13,14 @@ ion-header{
   color:#888;
   font-size: 24px;
   text-align: center;
+}
+.abilityDiv{
+
+  text-align: center;
+
+}
+ion-input {
+  input {
+    text-align: center;
+  }
 }
