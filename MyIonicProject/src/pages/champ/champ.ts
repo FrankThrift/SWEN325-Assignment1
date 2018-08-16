@@ -18,7 +18,7 @@ import { GlobalsProvider } from '../../providers/globals/globals';
 })
 export class ChampPage {
   skins = new Array();//currently used champions in the list
-  abilities = new Object();
+  abilities = {};
   responseObject: any;
   championName = 'deafult';
 

@@ -7,6 +7,7 @@ import { Platform, MenuController, Nav} from 'ionic-angular';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LoginPage } from '../pages/login/login';
 import { ChampionPage } from '../pages/champions/champions';
+import { SummonerPage } from '../pages/summoner/summoner';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,8 +38,9 @@ export class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'WelcomePage', component: WelcomePage},
-      { title: 'ChampionPage', component: ChampionPage},
+      { title: 'Welcome Page', component: WelcomePage},
+      { title: 'Champion Page', component: ChampionPage},
+      { title: 'Summoner Search', component: SummonerPage},
       { title: 'Logout', component: LoginPage}
     ];
   }

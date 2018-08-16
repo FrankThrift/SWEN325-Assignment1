@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-input placeholder="Search for Summoner Name" showCancelButton color="danger" [ngModel]="searchingSummoner"></ion-input>
+    <button ion-button color="primary" (click)="searchForSummoner()">Search!</button>
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding class = league>
+  <ion-label>Server Selection</ion-label>
+  <ion-select [(ngModel)]="region">
+    <ion-option value="br">Brazil</ion-option>
+    <ion-option value="eune">Europe Nordic & East</ion-option>
+    <ion-option value="euw">Europe West</ion-option>
+    <ion-option value="lan">Latin America North</ion-option>
+    <ion-option value="las">Latin America South</ion-option>
+    <ion-option value="na">North America</ion-option>
+    <ion-option value="ru">Russia</ion-option>
+    <ion-option value="tr">Turkey</ion-option>
+    <ion-option value="jp">Japan</ion-option>
+    <ion-option value="sea">Garena South East Asia</ion-option>
+    <ion-option value="kr">Republic of Korea</ion-option>
+    <ion-option value="cn">People's Republic of China</ion-option>
+  </ion-select>
+
+
+
+
+
+</ion-content>

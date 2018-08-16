@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class RestProvider {
-apiKey = "&api_key=RGAPI-f8ae134b-2500-4b23-989f-7c0f5325050c";
+apiKey = "&api_key=RGAPI-cdca32a4-73a2-4109-bfec-8a81b9174257";
 squareURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/";
 championsURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion.json";
 championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion/"
@@ -48,6 +48,9 @@ championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion
     });
   }
 
+  getSummoner(name){
+
+  }
 
 
 }
