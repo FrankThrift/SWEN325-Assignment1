@@ -7,28 +7,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>champ</ion-title>
+    <ion-title>{{championName}}</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
+
   <ion-slides pager>
     <ion-slide *ngFor="let skin of skins">
         <img src ="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{championName}}_{{skin.num}}.jpg" item-center>
         <h2>{{skin.name}} </h2>
-
-
     </ion-slide>
   </ion-slides>
 
   <div class = "abilityDiv">
-    <button ion-button >
+    <button ion-button (click) = "showQAlert()">
       <ion-icon name="Q">
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{abilities.q}}" item-left>
       </ion-icon>
     </button>
+    <p>{{abilities.qDes}}<p>
+    </div>
+
     <button ion-button>
       <ion-icon name="W">
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{abilities.w}}" item-left>
@@ -44,5 +44,5 @@
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{abilities.r}}" item-left>
       </ion-icon>
     </button>
-  </div>
+
 </ion-content>

@@ -1,6 +1,6 @@
-page-login {
   h1 {
     text-align: center;
+    color: color($colors, lolyellow);
   }
   h3 {
     text-align: center;
@@ -8,10 +8,11 @@ page-login {
   ion-input {
     input {
       text-align: center;
+
     }
+    background: white;
   }
   p {
     text-align: center;
 
   }
-}
