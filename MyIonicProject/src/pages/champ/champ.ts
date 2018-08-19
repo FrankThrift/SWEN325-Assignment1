@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { AlertController } from 'ionic-angular';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { RestProvider } from '../../providers/rest/rest';
 import { GlobalsProvider } from '../../providers/globals/globals';
@@ -19,7 +19,16 @@ import { GlobalsProvider } from '../../providers/globals/globals';
 })
 export class ChampPage {
   skins = new Array();//currently used champions in the list
-  abilities = {};
+  abilities = {
+    q: '',
+    qDes: '',
+    w: '',
+    wDes: '',
+    e: '',
+    eDes: '',
+    r: '',
+    rDes: ''
+  };
   responseObject: any;
   championName = 'deafult';
 
@@ -62,7 +71,7 @@ export class ChampPage {
 
   showQAlert(){
     const alert = this.alertCtrl.create({
-      title: this.championName + "'s Q'",
+      title: this.championName + "'s Q",
       subTitle: this.abilities.qDes,
       buttons: ['OK']
     });

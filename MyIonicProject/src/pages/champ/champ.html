@@ -26,23 +26,27 @@
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{abilities.q}}" item-left>
       </ion-icon>
     </button>
-    <p>{{abilities.qDes}}<p>
-    </div>
 
-    <button ion-button>
+
+
+    <button ion-button (click) = "showWAlert()">
       <ion-icon name="W">
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{abilities.w}}" item-left>
       </ion-icon>
     </button>
-    <button ion-button>
+
+
+    <button ion-button (click) = "showEAlert()">
       <ion-icon name="E">
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{abilities.e}}" item-left>
       </ion-icon>
     </button>
-    <button ion-button>
+
+
+    <button ion-button (click) = "showRAlert()">
       <ion-icon name="R">
         <img src ="http://ddragon.leagueoflegends.com/cdn/8.15.1/img/spell/{{abilities.r}}" item-left>
       </ion-icon>
     </button>
-
+  </div>
 </ion-content>

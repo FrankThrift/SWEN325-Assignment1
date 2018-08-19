@@ -9,10 +9,12 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class RestProvider {
-apiKey = "&api_key=RGAPI-cdca32a4-73a2-4109-bfec-8a81b9174257";
+apiKey = "api_key=RGAPI-70df2ea1-0496-4d51-9936-3afd030e1df2";
 squareURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/img/champion/";
 championsURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion.json";
 championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion/"
+summonerURL = "https://oc1.api.riotgames.com/lol/summoner/v3/summoners/by-name/"
+matchHistoryURL = "https://oc1.api.riotgames.com/lol/match/v3/matchlists/by-account/"
   constructor(public http: HttpClient) {
   }
 
@@ -49,7 +51,24 @@ championURL = "http://ddragon.leagueoflegends.com/cdn/8.15.1/data/en_US/champion
   }
 
   getSummoner(name){
-
+    return new Promise(resolve => {
+      this.http.get(this.summonerURL+name+'?'+this.apiKey).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+  }
+  getMatchHistory(id){
+    console.log(this.matchHistoryURL+id+'?endIndex=10'+'&'+this.apiKey);
+    return new Promise(resolve => {
+      this.http.get(this.matchHistoryURL+id+'?endIndex=10'+'&'+this.apiKey).subscribe(data => {
+        resolve(data);
+      }, err => {
+        resolve(err);
+        console.log(err);
+      });
+    });
   }
 
 

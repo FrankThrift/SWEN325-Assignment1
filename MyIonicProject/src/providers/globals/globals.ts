@@ -15,7 +15,7 @@ export class GlobalsProvider {
 
   public summoner = 'default'
   public championSelected ='default'
-
+  public searchingSummoner: string;
 
   public setSummoner(name){
     this.summoner = name;
@@ -23,5 +23,9 @@ export class GlobalsProvider {
 
   public setChampion(name){
     this.championSelected = name;
+  }
+
+  public setSearchedForSummoner(name){
+    this.searchingSummoner = name;
   }
 }

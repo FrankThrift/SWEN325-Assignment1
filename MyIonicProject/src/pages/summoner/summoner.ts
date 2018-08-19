@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { SearchedForSummonerPage } from '../searched-for-summoner/searched-for-summoner';
 
 import { RestProvider } from '../../providers/rest/rest';
 import { GlobalsProvider } from '../../providers/globals/globals';
@@ -19,17 +20,15 @@ export class SummonerPage {
   region: string;
   summoner: string;
   searchingSummoner: string;
-  responseObject: any;
   constructor(public navCtrl: NavController, public navParams: NavParams,
      private globals: GlobalsProvider, private restProvider: RestProvider) {
     this.summoner = globals.summoner;
   }
 
   searchForSummoner(){
-    this.restProvider.getSummoner().then(data => {
-      this.responseObject = data;
+    this.globals.setSearchedForSummoner(this.searchingSummoner);
+    this.navCtrl.push(SearchedForSummonerPage);
 
-    });
   }
 
 

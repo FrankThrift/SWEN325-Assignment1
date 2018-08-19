@@ -10,6 +10,7 @@ import { LoginPage } from '../pages/login/login';
 import { ChampionPage } from '../pages/champions/champions';
 import { ChampPage } from '../pages/champ/champ';
 import { SummonerPage } from '../pages/summoner/summoner';
+import { SearchedForSummonerPage } from '../pages/searched-for-summoner/searched-for-summoner';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -23,7 +24,8 @@ import { RestProvider } from '../providers/rest/rest';
     LoginPage,
     ChampionPage,
     ChampPage,
-    SummonerPage
+    SummonerPage,
+    SearchedForSummonerPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { RestProvider } from '../providers/rest/rest';
     LoginPage,
     ChampionPage,
     ChampPage,
-    SummonerPage
+    SummonerPage,
+    SearchedForSummonerPage
   ],
   providers: [
     StatusBar,
