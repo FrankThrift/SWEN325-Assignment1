@@ -7,7 +7,6 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>searchedForSummoner</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,4 +14,17 @@
 
 <ion-content padding>
 
+  <ion-card>
+
+      <img src="http://ddragon.leagueoflegends.com/cdn/8.16.1/img/profileicon/{{summonerObject.profileIconId}}.png"/>
+
+    <ion-card-content>
+      <ion-card-title>
+        {{summonerName}}
+        </ion-card-title>
+      <p>
+        Summoner level: {{summonerObject.summonerLevel}}
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

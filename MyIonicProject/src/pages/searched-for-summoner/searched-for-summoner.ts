@@ -17,28 +17,43 @@ import { GlobalsProvider } from '../../providers/globals/globals';
 })
 export class SearchedForSummonerPage {
 summonerObject: any;
-matchHistory: any;
+summonerName: string;
+matchHistory = new Array();
+matchObject = <any>{};
   constructor(public navCtrl: NavController, public navParams: NavParams,
      private globals: GlobalsProvider, private restProvider: RestProvider) {
        this.getSummonerID();
-
+       this.summonerName = globals.searchingSummoner;
 
   }
 
   getSummonerID(){
     this.restProvider.getSummoner(this.globals.searchingSummoner).then(data => {
       this.summonerObject = data;
-      console.log(this.summonerObject);
-      console.log(this.summonerObject.accountId);
+      //console.log(this.summonerObject);
+      //console.log(this.summonerObject.profileIconId);
+      this.summonerName = this.globals.searchingSummoner;//really janky error handling
+      //console.log(this.globals.searchingSummoner);
       this.showMatchHistory();
+    }).catch(err => {
+      console.log("sad boys");
     });
+
   }
 
   showMatchHistory(){
     this.restProvider.getMatchHistory(this.summonerObject.accountId).then(data => {
-      this.matchHistory = data;
+      this.matchObject = data;
+      for(var match in this.matchObject.matches){
+        this.matchHistory.push({
+          champion: this.matchObject.matches[match].champion,
+          gameId: this.matchObject.matches[match].gameId
+        })
+      }
       console.log(this.matchHistory);
     });
+
+
   }
 
 

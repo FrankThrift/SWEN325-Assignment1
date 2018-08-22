@@ -19,7 +19,7 @@ import { GlobalsProvider } from '../../providers/globals/globals';
 export class SummonerPage {
   region: string;
   summoner: string;
-  searchingSummoner: string;
+  searchingSummoner: '';
   constructor(public navCtrl: NavController, public navParams: NavParams,
      private globals: GlobalsProvider, private restProvider: RestProvider) {
     this.summoner = globals.summoner;

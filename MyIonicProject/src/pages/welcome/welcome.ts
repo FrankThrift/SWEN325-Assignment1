@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { GlobalsProvider } from '../../providers/globals/globals'
 import { AlertController } from 'ionic-angular';
+
+import { ChampionPage } from '../champions/champions';
+import { SummonerPage } from '../summoner/summoner';
 @Component({
   selector: 'page-welcome',
   templateUrl: 'welcome.html'
@@ -21,6 +24,16 @@ export class WelcomePage {
       buttons: ['OK']
     });
     alert.present();
+  }
+
+  public goToChampions() {
+      this.navCtrl.setRoot(ChampionPage);
+      this.navCtrl.popToRoot();
+  }
+
+  public goToSearch() {
+      this.navCtrl.setRoot(SummonerPage);
+      this.navCtrl.popToRoot();
   }
 
 }

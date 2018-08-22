@@ -1,10 +1,12 @@
+
 <ion-header>
+  <ion-navbar>
+    <ion-title>Welcome to the search page {{summoner}} !</ion-title>
+  </ion-navbar>
   <ion-toolbar>
-    <ion-input placeholder="Search for Summoner Name" showCancelButton color="danger" [ngModel]="searchingSummoner"></ion-input>
+    <ion-searchbar placeholder="Search for Summoner Name" showCancelButton color="danger" [(ngModel)]="searchingSummoner"></ion-searchbar>
     <button ion-button color="primary" (click)="searchForSummoner()">Search!</button>
-
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content padding class = league>
@@ -16,6 +18,7 @@
     <ion-option value="lan">Latin America North</ion-option>
     <ion-option value="las">Latin America South</ion-option>
     <ion-option value="na">North America</ion-option>
+    <ion-option value="oce">Oceania</ion-option>
     <ion-option value="ru">Russia</ion-option>
     <ion-option value="tr">Turkey</ion-option>
     <ion-option value="jp">Japan</ion-option>
