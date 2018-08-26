@@ -16,13 +16,16 @@ import { GlobalsProvider } from '../../providers/globals/globals';
   templateUrl: 'searched-for-summoner.html',
 })
 export class SearchedForSummonerPage {
-summonerObject: any;
+summonerObject: any={
+  profileIconId:588,
+};
 summonerName: string;
 matchHistory = new Array();
 matchObject = <any>{};
   constructor(public navCtrl: NavController, public navParams: NavParams,
      private globals: GlobalsProvider, private restProvider: RestProvider) {
        this.getSummonerID();
+       console.log(globals.searchingSummoner);
        this.summonerName = globals.searchingSummoner;
 
   }
@@ -30,7 +33,7 @@ matchObject = <any>{};
   getSummonerID(){
     this.restProvider.getSummoner(this.globals.searchingSummoner).then(data => {
       this.summonerObject = data;
-      //console.log(this.summonerObject);
+      console.log(this.summonerObject);
       //console.log(this.summonerObject.profileIconId);
       this.summonerName = this.globals.searchingSummoner;//really janky error handling
       //console.log(this.globals.searchingSummoner);
